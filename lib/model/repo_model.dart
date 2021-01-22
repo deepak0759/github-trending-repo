@@ -4,12 +4,11 @@ import 'package:built_collection/built_collection.dart';
 import 'item.dart';
 
 part 'repo_model.g.dart';
+
 abstract class RepoModel implements Built<RepoModel, RepoModelBuilder> {
   static Serializer<RepoModel> get serializer => _$repoModelSerializer;
 
   RepoModel._();
-
-  // factory CallSchedule([void Function(CallScheduleBuilder) updates]) = _$CallSchedule;
 
   factory RepoModel([updates(RepoModelBuilder b)]) = _$RepoModel;
   @nullable

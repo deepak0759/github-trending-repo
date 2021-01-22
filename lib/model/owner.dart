@@ -8,8 +8,6 @@ abstract class Owner implements Built<Owner, OwnerBuilder> {
 
   Owner._();
 
-  // factory CallSchedule([void Function(CallScheduleBuilder) updates]) = _$CallSchedule;
-
   factory Owner([updates(OwnerBuilder b)]) = _$Owner;
 
   @nullable
@@ -22,5 +20,4 @@ abstract class Owner implements Built<Owner, OwnerBuilder> {
   int get id;
   @nullable
   String get login;
-
 }

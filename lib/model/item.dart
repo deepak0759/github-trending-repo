@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:built_collection/built_collection.dart';
@@ -12,8 +10,6 @@ abstract class Item implements Built<Item, ItemBuilder> {
 
   Item._();
 
-  // factory CallSchedule([void Function(CallScheduleBuilder) updates]) = _$CallSchedule;
-
   factory Item([updates(ItemBuilder b)]) = _$Item;
 
   @nullable
@@ -21,16 +17,15 @@ abstract class Item implements Built<Item, ItemBuilder> {
   @nullable
   String get name;
   @nullable
-  String  get avatar_url;
+  String get avatar_url;
   @nullable
   String get url;
-
   @nullable
   int get watchers_count;
   @nullable
   String get language;
   @nullable
-  int  get forks;
+  int get forks;
   @nullable
   String get description;
   @nullable
@@ -39,6 +34,4 @@ abstract class Item implements Built<Item, ItemBuilder> {
   int get open_issues;
   @nullable
   String get clone_url;
-
-
 }
