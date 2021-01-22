@@ -65,7 +65,7 @@ class _ListItemState extends State<ListItem> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 22),
-                  child: Text('by: ${listItem.owner.login}',
+                  child: Text('By @${listItem.owner.login}',
                       style: TextStyle(
                         fontFamily: "Spartan",
                         fontWeight: FontWeight.w600,
@@ -76,21 +76,6 @@ class _ListItemState extends State<ListItem> {
                 )
               ],
             ),
-            //     leading: Text(index.toString()),
-            // leading: Column(
-            //   children: [
-            //     listItem.owner.avatar_url != null
-            //         ? Container(
-            //             width: 40,
-            //             height: 55,
-            //             child: FadeInImage.assetNetwork(
-            //               placeholder: 'assets/loading.gif',
-            //               image: listItem.owner.avatar_url,
-            //             ),
-            //           )
-            //         : Image.asset('assets/default.png'),
-            //   ],
-            // ),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 5),
               child: Row(

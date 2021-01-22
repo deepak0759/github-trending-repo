@@ -13,8 +13,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  ScrollController controller;
-  Widget _appBarTitle = Text(TITLE);
+
+  Widget _appBarTitle = Text(TITLE,style: TextStyle(color: Colors.brown[800],fontSize: 20),);
   GitStore git;
   String _selectedItem = 'weekly';
   int _days = 7;
@@ -23,9 +23,6 @@ class _HomeState extends State<Home> {
     super.initState();
     git ??= Provider.of<GitStore>(context, listen: false);
     git.getRepoList(_days);
-    //  _count+=25;
-    //git.search('python');
-    // controller = new ScrollController()..addListener(_scrollListener);
   }
 
   @override
@@ -117,21 +114,22 @@ class _HomeState extends State<Home> {
   }
 
   Widget listView() {
-    return Container(
-      height: MediaQuery.of(context).size.height * 0.8,
-      width: MediaQuery.of(context).size.width,
-      child: Observer(builder: (_) {
-        return git.mystate == StoreState.loaded
-            ? ListView.builder(
-                controller: controller,
-                itemCount: git.repoList.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return ListItem(git.repoList[index]);
-                })
-            : Center(
-                child: CircularProgressIndicator(),
-              );
-      }),
+    return Expanded(
+      child: Container(
+        height: MediaQuery.of(context).size.height*0.8,
+        width: MediaQuery.of(context).size.width,
+        child: Observer(builder: (_) {
+          return git.mystate == StoreState.loaded
+              ? ListView.builder(
+                  itemCount: git.repoList.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return ListItem(git.repoList[index]);
+                  })
+              : Center(
+                  child: CircularProgressIndicator(),
+                );
+        }),
+      ),
     );
   }
 }

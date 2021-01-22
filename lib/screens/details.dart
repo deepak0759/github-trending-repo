@@ -11,7 +11,7 @@ class Details extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(DETAIL_TITLE),
+        title: Text(DETAIL_TITLE,style: TextStyle(color: Colors.brown[800],fontSize: 20),),
         centerTitle: true,
       ),
       body: Container(

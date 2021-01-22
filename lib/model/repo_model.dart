@@ -11,6 +11,7 @@ abstract class RepoModel implements Built<RepoModel, RepoModelBuilder> {
   RepoModel._();
 
   factory RepoModel([updates(RepoModelBuilder b)]) = _$RepoModel;
+
   @nullable
   int get total_count;
   @nullable

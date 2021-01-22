@@ -21,9 +21,8 @@ void main() {
               GitStore(chopperClient.getService<GitHubService>()),
         )
       ],
-      child: Consumer<ChopperClient>(
-        builder: (ctx, auth, expense) => MyApp(),
-      )));
+      child:  MyApp(),
+      ));
 }
 
 class MyApp extends StatelessWidget {
@@ -31,6 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'GitHub Trending',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primarySwatch: Colors.blue,
           primaryColor: Colors.lightGreen[600],
